@@ -13,8 +13,8 @@ public class TensorQuery {
     @Test
     public void testCase() throws InterruptedException, IOException {
         String lineLogin;
-        System.setProperty("webdriver.chrome.driver", "src/driver/chromedriver.exe");
-        String basedurl = "http://148.251.88.9:8080/mfc_hmao/admin/";
+        System.setProperty("webdriver.chrome.driver", "src/driver/win/x32/chromedriver.exe");
+        String basedurl = "http://gmail.com/";
         WebDriver driver = new ChromeDriver();
         driver.get(basedurl);
         BufferedReader reader1 = new BufferedReader(new FileReader("src/csv/login.csv"));
