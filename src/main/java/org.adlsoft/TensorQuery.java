@@ -1,11 +1,12 @@
-package java.org.adlsoft;
+package org.adlsoft;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import java.io.*;
-import org.junit.*;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.*;
-
-import java.lang.*;
 
 public class TensorQuery {
 
