@@ -4,9 +4,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-
 import java.io.*;
+
+import org.openqa.selenium.support.ui.Select;
 
 public class TensorQuery {
 
@@ -25,11 +25,16 @@ public class TensorQuery {
                 driver.get(basedURL);
 
                 //mail.ru
-                driver.findElement(By.id("mailbox__login")).clear();
-                driver.findElement(By.id("mailbox__login")).sendKeys(str[1]);
-                driver.findElement(By.id("mailbox__password")).clear();
-                driver.findElement(By.id("mailbox__password")).sendKeys(str[2]);
-                driver.findElement(By.id("mailbox__auth__button")).click();
+//                driver.findElement(By.id("mailbox__login")).clear();
+//                driver.findElement(By.id("mailbox__login")).sendKeys(str[1]);
+//                driver.findElement(By.id("mailbox__password")).clear();
+//                driver.findElement(By.id("mailbox__password")).sendKeys(str[2]);
+//                driver.findElement(By.id("mailbox__auth__button")).click();
+//                Thread.sleep(5000);
+
+                //https://uploadfiles.io/
+                driver.findElement(By.cssSelector("input.dz-hidden-input")).sendKeys(str[1]);
+                Thread.sleep(5000);
 
 //                        int fe_id = 0;
 //                        switch (fe_id) {
