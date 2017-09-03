@@ -1,6 +1,7 @@
 package org.adlsoft;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,13 +10,22 @@ import java.io.*;
 
 public class TensorQuery {
 
+    @BeforeClass
+    public static void setupClass() {
+//        FirefoxDriverManager.getInstance().setup();
+//        OperaDriverManager.getInstance().setup();
+//        PhantomJsDriverManager.getInstance().setup();
+//        EdgeDriverManager.getInstance().setup();
+//        InternetExplorerDriverManager.getInstance().setup();
+
+
+        ChromeDriverManager.getInstance().setup();
+    }
+
     @Test
     public void testCase() throws InterruptedException, IOException {
         String lineLogin;
-        ChromeDriverManager.getInstance().setup();
-//        System.setProperty("webdriver.chrome.driver", "driver/win/x32/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("csv/login.csv"), "windows-1251"));
         while ((lineLogin = reader.readLine()) != null) {
 
