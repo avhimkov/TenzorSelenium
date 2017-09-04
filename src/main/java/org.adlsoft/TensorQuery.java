@@ -1,19 +1,19 @@
 package org.adlsoft;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.FirefoxDriverManager;
+import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
 import io.github.bonigarcia.wdm.PhantomJsDriverManager;
-import org.apache.commons.io.FileUtils;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.*;
+
+import org.apache.commons.io.FileUtils;
+import org.junit.*;
 import java.io.*;
 
 public class TensorQuery {
@@ -22,19 +22,20 @@ public class TensorQuery {
 
     @BeforeClass
     public static void setupClass() {
+        ChromeDriverManager.getInstance().setup();
 //        FirefoxDriverManager.getInstance().setup();
 //        OperaDriverManager.getInstance().setup();
 //        PhantomJsDriverManager.getInstance().setup();
 //        EdgeDriverManager.getInstance().setup();
 //        InternetExplorerDriverManager.getInstance().setup();
-
-        ChromeDriverManager.getInstance().setup();
     }
 
     @Before
     public void setupTest() {
+//        driver = new InternetExplorerDriver();
 //        driver = (WebDriver) new PhantomJsDriverManager();
         driver = new ChromeDriver();
+//        driver = new FirefoxDriver();
     }
 
     @After
@@ -48,11 +49,12 @@ public class TensorQuery {
     public void testCase() throws InterruptedException, IOException {
 
         WebDriverWait wait = new WebDriverWait(driver, 30);
-        String lineLogin;
-//        WebDriver driver = new ChromeDriver();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("csv/login.csv"), "windows-1251"));
-        while ((lineLogin = reader.readLine()) != null) {
 
+        String lineLogin;
+        BufferedReader reader = new BufferedReader(new InputStreamReader
+                (new FileInputStream("csv/login.csv"), "UTF-8"));//windows-1251
+
+        while ((lineLogin = reader.readLine()) != null) {
             String str[] = lineLogin.split(";");
             if (str.length > 1) {
                 String basedURL = str[0];
@@ -65,22 +67,16 @@ public class TensorQuery {
                 driver.findElement(By.id("mailbox__password")).sendKeys(str[2]);
                 driver.findElement(By.id("mailbox__auth__button")).click();
 
-                //Screenshot pages
-                String screenpath = captureScreenshot(driver, str[1]);
-
-
                 //https://uploadfiles.io/
 //                driver.findElement(By.cssSelector("input.dz-hidden-input")).sendKeys(str[1]);
 
-//                Thread.sleep(3000);
+                //Screenshot pages
+                String screenpath = captureScreenshot(driver, str[1]);
             }
         }
     }
 
-
-
     public static String captureScreenshot (WebDriver driver, String screenshotName){
-
         try {
             TakesScreenshot ts = (TakesScreenshot)driver;
             File source = ts.getScreenshotAs(OutputType.FILE);
@@ -89,8 +85,6 @@ public class TensorQuery {
             FileUtils.copyFile(source, destination);
             return dest;
         }
-
         catch (IOException e) {return e.getMessage();}
     }
-
 }
