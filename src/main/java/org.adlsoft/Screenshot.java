@@ -5,20 +5,22 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class Screenshot {
+    public static String captureScreenshot(WebDriver driver, String screenshotName) throws InterruptedException, IOException {
 
-    public static String captureScreenshot (WebDriver driver, String screenshotName){
+        new File("screenshot").mkdir();
+
         try {
-            TakesScreenshot ts = (TakesScreenshot)driver;
+            TakesScreenshot ts = (TakesScreenshot) driver;
             File source = ts.getScreenshotAs(OutputType.FILE);
-            String dest = "d:/" + screenshotName + ".png";
+            String dest = "screenshot/" + screenshotName + ".png";
             File destination = new File(dest);
             FileUtils.copyFile(source, destination);
             return dest;
+        } catch (IOException e) {
+            return e.getMessage();
         }
-        catch (IOException e) {return e.getMessage();}
     }
 }
