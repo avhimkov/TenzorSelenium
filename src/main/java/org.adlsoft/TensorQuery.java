@@ -63,6 +63,8 @@ public class TensorQuery {
                 driver.get(basedURL);
 
                 //tenzor
+
+                //баянова
 //                driver.get(basedURL + "/petition.html?id=e544f187-e6c9-491b-ae9c-599083f9fa03");
                 driver.findElement(By.xpath("//div[@id='ws-1flvutwf8hl1504609716252']/div")).click();
                 driver.findElement(By.cssSelector("input.controls-TextBox__field.js-controls-TextBox__field")).clear();
@@ -179,6 +181,59 @@ public class TensorQuery {
                 driver.findElement(By.xpath("//div[@id='ws-54fp36kple1504601169877']/div")).click();
                 driver.findElement(By.cssSelector("#ws-2iqxur16b5u1504601169672 > a.ws-link-body.ws-hover-target > div.ws-button-caption")).click();
                 driver.findElement(By.cssSelector("#ws-dg2b84qw8tb1504599961338 > a.ws-link-body.ws-hover-target > div.ws-button-caption")).click();
+                driver.findElement(By.cssSelector("#ws-qwz1pyjhnje1504598406949 > a.ws-link-body.ws-hover-target > div.ws-button-caption")).click();
+
+                //комарчук
+                driver.get(baseUrl + "/petition.html?id=e587a92f-aa07-4aff-b55b-dd976f6b5c9f");
+                driver.findElement(By.xpath("//div[@id='ws-rg32jr1nraf1504598337597']/div")).click();
+                driver.findElement(By.cssSelector("input.controls-TextBox__field.js-controls-TextBox__field")).clear();
+                driver.findElement(By.cssSelector("input.controls-TextBox__field.js-controls-TextBox__field")).sendKeys("77804");
+                driver.findElement(By.cssSelector("span[name=\"confirmButton\"] > span.controls-Button__text.js-controls-Button__text")).click();
+                driver.findElement(By.id("fld-ФИО владельца подписи")).click();
+                driver.findElement(By.id("fld-ФИО владельца подписи")).clear();
+                driver.findElement(By.id("fld-ФИО владельца подписи")).sendKeys("Комарчук Роза Фларитовна");
+                driver.findElement(By.xpath("//div[@id='fld-Паспорт.Дата']/em")).click();
+                driver.findElement(By.id("fld-Паспорт.КемВыдан")).clear();
+                driver.findElement(By.id("fld-Паспорт.КемВыдан")).sendKeys("ОТДЕЛЕНИЕМ В ГОР. ЛЯНТОРЕ ОУФМС РОССИИ ПО ХАНТЫ-МАНСИЙСКОМУ АВТОНОМНОМУ ОКРУГУ  ЮГРЕ В СУРГУТСКОМ РАЙОНЕ");
+                driver.findElement(By.xpath("//div[@id='fld-Паспорт.ДатаРождения']/em")).click();
+                driver.findElement(By.xpath("(//div[@id='fld-Паспорт.ПолПерекдючатель']/label/span)[3]")).click();
+                driver.findElement(By.id("Паспорт.ПолПерекдючатель-F")).click();
+                driver.findElement(By.id("fld-Паспорт.МестоРождения")).clear();
+                driver.findElement(By.id("fld-Паспорт.МестоРождения")).sendKeys("ПОС. ПИМ СУРГУТСКОГО Р-НА ТЮМЕНСКАЯ ОБЛ.");
+                driver.findElement(By.id("fld-Значение")).clear();
+                driver.findElement(By.id("fld-Значение")).sendKeys("11527292643");
+                driver.findElement(By.cssSelector("#ws-z0pvgsft1as1504598408613 > div.ws-field > #fld-Значение")).clear();
+                driver.findElement(By.cssSelector("#ws-z0pvgsft1as1504598408613 > div.ws-field > #fld-Значение")).sendKeys("");
+                driver.findElement(By.cssSelector("#ws-nrptisb68d1504598408624 > i.controls-RadioButton__icon")).click();
+                driver.findElement(By.id("ws-89e3udhdyua1504598407273")).click();
+                driver.findElement(By.cssSelector("#ws-yog2ppf57el1504598661316 > div.ws-field > #fld-Значение")).clear();
+                driver.findElement(By.cssSelector("#ws-yog2ppf57el1504598661316 > div.ws-field > #fld-Значение")).sendKeys("Ведущий специалист");
+                driver.findElement(By.cssSelector("#ws-rv8vkqry8v1504598661339 > div.ws-field > #fld-Значение")).clear();
+                driver.findElement(By.cssSelector("#ws-rv8vkqry8v1504598661339 > div.ws-field > #fld-Значение")).sendKeys("Отдел ПиВД");
+                driver.findElement(By.xpath("//span[@id='ws-ahm8ffjqa1m1504598661396']/span")).click();
+                driver.findElement(By.cssSelector("span.controls-MenuItem__text.js-controls-MenuItem__text")).click();
+                driver.findElement(By.name("file1")).clear();
+                driver.findElement(By.name("file1")).sendKeys("C:\\Users\\AvhimkovDL.MFCLYANTOR\\Desktop\\2017эцп\\Комарчук Роза Фларитовна\\Комарчук Роза Фларитовна.pdf");
+                driver.findElement(By.xpath("//span[@id='ws-sltzfvhq4e1504598661417']/span")).click();
+                driver.findElement(By.cssSelector("#ws-at1a2ypjjqq1504599002083 > span.controls-MenuItem__content > span.controls-MenuItem__text.js-controls-MenuItem__text")).click();
+                driver.findElement(By.cssSelector("#ws-znxfjvb23vm1504598661425 > form.ws-file-browse-form > input[name=\"file1\"]")).clear();
+                driver.findElement(By.cssSelector("#ws-znxfjvb23vm1504598661425 > form.ws-file-browse-form > input[name=\"file1\"]")).sendKeys("C:\\Users\\AvhimkovDL.MFCLYANTOR\\Desktop\\2017эцп\\Комарчук Роза Фларитовна\\СНИЛС Комарчук.jpg");
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[3]/div[2]")).click();
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[3]/div[2]")).click();
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[4]/div[2]")).click();
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[4]/div[2]")).click();
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[3]/div[2]")).click();
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[3]/div[2]")).click();
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[3]/div[2]")).click();
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[7]/div[2]")).click();
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[7]/div[2]")).click();
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[6]/div[2]")).click();
+                driver.findElement(By.xpath("//div[@id='ws-lkpn98vyi0r1504598407159']/div[2]/div/div/div[3]/div/div[6]/div[2]")).click();
+                driver.findElement(By.cssSelector("#ws-qwz1pyjhnje1504598406949 > a.ws-link-body.ws-hover-target > div.ws-button-caption")).click();
+                driver.findElement(By.xpath("//div[@id='ws-kh0wnsciuxo1504598407199']/a/div")).click();
+                driver.findElement(By.xpath("//div[13]/span[2]/div[2]")).click();
+                driver.findElement(By.id("fld-ФИО владельца подписи")).clear();
+                driver.findElement(By.id("fld-ФИО владельца подписи")).sendKeys("Комарчук Роза Фларитовна");
                 driver.findElement(By.cssSelector("#ws-qwz1pyjhnje1504598406949 > a.ws-link-body.ws-hover-target > div.ws-button-caption")).click();
 
                 //https://mail.ru/
