@@ -184,7 +184,7 @@ public class TensorQuery {
                 driver.findElement(By.cssSelector("#ws-qwz1pyjhnje1504598406949 > a.ws-link-body.ws-hover-target > div.ws-button-caption")).click();
 
                 //комарчук
-                driver.get(baseUrl + "/petition.html?id=e587a92f-aa07-4aff-b55b-dd976f6b5c9f");
+//                driver.get(baseUrl + "/petition.html?id=e587a92f-aa07-4aff-b55b-dd976f6b5c9f");
                 driver.findElement(By.xpath("//div[@id='ws-rg32jr1nraf1504598337597']/div")).click();
                 driver.findElement(By.cssSelector("input.controls-TextBox__field.js-controls-TextBox__field")).clear();
                 driver.findElement(By.cssSelector("input.controls-TextBox__field.js-controls-TextBox__field")).sendKeys("77804");
