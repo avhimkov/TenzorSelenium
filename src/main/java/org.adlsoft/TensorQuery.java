@@ -247,11 +247,11 @@ public class TensorQuery {
 //                driver.findElement(By.cssSelector("#ws-qwz1pyjhnje1504598406949 > a.ws-link-body.ws-hover-target > div.ws-button-caption")).click();
 
                     //https://mail.ru/
-                    driver.findElement(By.id("mailbox__login")).clear();
-                    driver.findElement(By.id("mailbox__login")).sendKeys(str[1]);
-                    driver.findElement(By.id("mailbox__password")).clear();
-                    driver.findElement(By.id("mailbox__password")).sendKeys(str[2]);
-                    driver.findElement(By.id("mailbox__auth__button")).click();
+//                    driver.findElement(By.id("mailbox__login")).clear();
+//                    driver.findElement(By.id("mailbox__login")).sendKeys(str[1]);
+//                    driver.findElement(By.id("mailbox__password")).clear();
+//                    driver.findElement(By.id("mailbox__password")).sendKeys(str[2]);
+//                    driver.findElement(By.id("mailbox__auth__button")).click();
 
                     //https://uploadfiles.io/
 //                driver.findElement(By.cssSelector("input.dz-hidden-input")).sendKeys(str[1]);

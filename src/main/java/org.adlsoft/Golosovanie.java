@@ -36,7 +36,7 @@ public class Golosovanie {
     public void setupTest() {
 //        driver = new InternetExplorerDriver();
 //        driverp = new PhantomJsDriverManager();
-//        driver = new ChromeDriver();
+        driver = new ChromeDriver();
 //        driver = new FirefoxDriver();
     }
 
@@ -50,7 +50,7 @@ public class Golosovanie {
     @Test
     public void testCase() throws InterruptedException, IOException {
 
-//        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, 30);
 
         String lineLogin;
         BufferedReader reader = new BufferedReader(new InputStreamReader
@@ -63,11 +63,11 @@ public class Golosovanie {
                 driver.get(basedURL);
 
                 //https://mail.ru/
-//                driver.findElement(By.id("mailbox__login")).clear();
-//                driver.findElement(By.id("mailbox__login")).sendKeys(str[1]);
-//                driver.findElement(By.id("mailbox__password")).clear();
-//                driver.findElement(By.id("mailbox__password")).sendKeys(str[2]);
-//                driver.findElement(By.id("mailbox__auth__button")).click();
+                driver.findElement(By.id("mailbox__login")).clear();
+                driver.findElement(By.id("mailbox__login")).sendKeys(str[1]);
+                driver.findElement(By.id("mailbox__password")).clear();
+                driver.findElement(By.id("mailbox__password")).sendKeys(str[2]);
+                driver.findElement(By.id("mailbox__auth__button")).click();
 
 //                driver.findElement(By.name("fileNumber")).clear();
 //                driver.findElement(By.name("fileNumber")).sendKeys(str[1]);
