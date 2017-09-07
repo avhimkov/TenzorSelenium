@@ -1,6 +1,7 @@
 package org.adlsoft;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.PhantomJsDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -19,6 +20,7 @@ import static org.adlsoft.Screenshot.captureScreenshot;
 
 public class Golosovanie {
     private WebDriver driver;
+//    private PhantomJsDriverManager driverp;
 
     @BeforeClass
     public static void setupClass() {
@@ -33,8 +35,8 @@ public class Golosovanie {
     @Before
     public void setupTest() {
 //        driver = new InternetExplorerDriver();
-//        driver = (WebDriver) new PhantomJsDriverManager();
-        driver = new ChromeDriver();
+//        driverp = new PhantomJsDriverManager();
+//        driver = new ChromeDriver();
 //        driver = new FirefoxDriver();
     }
 
@@ -48,7 +50,7 @@ public class Golosovanie {
     @Test
     public void testCase() throws InterruptedException, IOException {
 
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+//        WebDriverWait wait = new WebDriverWait(driver, 30);
 
         String lineLogin;
         BufferedReader reader = new BufferedReader(new InputStreamReader
@@ -61,22 +63,28 @@ public class Golosovanie {
                 driver.get(basedURL);
 
                 //https://mail.ru/
-                driver.findElement(By.name("fileNumber")).clear();
-                driver.findElement(By.name("fileNumber")).sendKeys(str[1]);
-                driver.findElement(By.name("authCode")).clear();
-                driver.findElement(By.name("authCode")).sendKeys(str[4]);
-                driver.findElement(By.xpath("//button[@type='button']")).click();
-                driver.findElement(By.xpath("//div[@id='page0']/div[2]/div/div[2]/ul/li["+str[3]+"]/label/span")).click();
-                driver.findElement(By.xpath("//button[@type='button']")).click();
-                driver.findElement(By.xpath("//div[@id='page1']/div[2]/div/div[2]/ul/li["+str[4]+"]/label/span")).click();
-                driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
-                driver.findElement(By.xpath("//div[@id='page2']/div[2]/div/div[2]/ul/li["+str[5]+"]/label/span")).click();
-                driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
-                driver.findElement(By.xpath("//div[@id='page3']/div[2]/div/div[2]/ul/li["+str[6]+"]/label/span")).click();
-                driver.findElement(By.xpath("(//button[@type='button'])[4]")).click();
-                driver.findElement(By.xpath("//div[@id='page4']/div[2]/div/div[2]/ul/li["+str[7]+"]/label/span")).click();
-                driver.findElement(By.xpath("(//button[@type='button'])[5]")).click();
-                driver.findElement(By.xpath("(//button[@type='button'])[6]")).click();
+//                driver.findElement(By.id("mailbox__login")).clear();
+//                driver.findElement(By.id("mailbox__login")).sendKeys(str[1]);
+//                driver.findElement(By.id("mailbox__password")).clear();
+//                driver.findElement(By.id("mailbox__password")).sendKeys(str[2]);
+//                driver.findElement(By.id("mailbox__auth__button")).click();
+
+//                driver.findElement(By.name("fileNumber")).clear();
+//                driver.findElement(By.name("fileNumber")).sendKeys(str[1]);
+//                driver.findElement(By.name("authCode")).clear();
+//                driver.findElement(By.name("authCode")).sendKeys(str[4]);
+//                driver.findElement(By.xpath("//button[@type='button']")).click();
+//                driver.findElement(By.xpath("//div[@id='page0']/div[2]/div/div[2]/ul/li["+str[3]+"]/label/span")).click();
+//                driver.findElement(By.xpath("//button[@type='button']")).click();
+//                driver.findElement(By.xpath("//div[@id='page1']/div[2]/div/div[2]/ul/li["+str[4]+"]/label/span")).click();
+//                driver.findElement(By.xpath("(//button[@type='button'])[2]")).click();
+//                driver.findElement(By.xpath("//div[@id='page2']/div[2]/div/div[2]/ul/li["+str[5]+"]/label/span")).click();
+//                driver.findElement(By.xpath("(//button[@type='button'])[3]")).click();
+//                driver.findElement(By.xpath("//div[@id='page3']/div[2]/div/div[2]/ul/li["+str[6]+"]/label/span")).click();
+//                driver.findElement(By.xpath("(//button[@type='button'])[4]")).click();
+//                driver.findElement(By.xpath("//div[@id='page4']/div[2]/div/div[2]/ul/li["+str[7]+"]/label/span")).click();
+//                driver.findElement(By.xpath("(//button[@type='button'])[5]")).click();
+//                driver.findElement(By.xpath("(//button[@type='button'])[6]")).click();
 
                 //Screenshot pages
                 String screenpath = captureScreenshot(driver, str[1]);

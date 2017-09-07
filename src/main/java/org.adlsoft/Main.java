@@ -8,7 +8,7 @@ public class Main {
     public static void main(String args[]) {
         JUnitCore junit = new JUnitCore();
         junit.addListener(new TextListener(System.out));
-        Result result = junit.run(TensorQuery.class); // Replace "SampleTest" with the name of your class
+        Result result = junit.run(Golosovanie.class); // Replace "SampleTest" with the name of your class
         if (result.getFailureCount() > 0) {
             System.out.println("Test failed.");
             System.exit(1);
