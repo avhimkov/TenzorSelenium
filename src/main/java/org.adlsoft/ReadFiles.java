@@ -9,7 +9,11 @@ import java.util.Scanner;
 public class ReadFiles {
     public static List<String[]> readFile(String fileName) throws IOException
     {
-        List<String[]> values = new ArrayList<String[]>();
+
+//        BufferedReader reader = new BufferedReader(new InputStreamReader
+//                (new FileInputStream("csv/golos.csv"), "UTF-8"));//windows-1251
+
+        List<String[]> values = new ArrayList<>();
         Scanner s = new Scanner(new File(fileName));
         while (s.hasNextLine()) {
             String line = s.nextLine();
