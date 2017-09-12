@@ -58,13 +58,6 @@ public class Vote {
             String basedURL = "http://mfc.admhmao.ru/mfctablet/quality.htm";
             driver.get(basedURL);
 
-            //https://mail.ru/
-//                driver.findElement(By.id("mailbox__login")).clear();
-//                driver.findElement(By.id("mailbox__login")).sendKeys(str[1]);
-//                driver.findElement(By.id("mailbox__password")).clear();
-//                driver.findElement(By.id("mailbox__password")).sendKeys(str[2]);
-//                driver.findElement(By.id("mailbox__auth__button")).click();
-
             //login
             driver.findElement(By.name("fileNumber")).clear();
             driver.findElement(By.name("fileNumber")).sendKeys(login.get(i));
@@ -94,5 +87,7 @@ public class Vote {
         //Screenshot pages
 //        String screenpath1 = captureScreenshot(driver, str[0]);
 
+        String[] str = login.get(0);
+        String screenpath = captureScreenshot(driver, str[0]);
     }
 }

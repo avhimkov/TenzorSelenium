@@ -52,18 +52,10 @@ public class TensorQuery {
     public void testCase() throws InterruptedException, IOException {
 
         WebDriverWait wait = new WebDriverWait(driver, 30);
-
         String lineLogin;
-
         long startAtByte = 0;
         BufferedReader reader = new BufferedReader(new InputStreamReader
                 (new FileInputStream("csv/login.csv"), "windows-1251"));//windows-1251
-
-          //skip firtsline
-//        File inputF = new File(inputFilePath);
-//        InputStream inputFS = new FileInputStream(inputF);
-//        BufferedReader br = new BufferedReader(new InputStreamReader(inputFS));
-//        inputList = br.lines().skip(1).map(mapToItem).collect(Collectors.toList());
 
         while ((lineLogin = reader.readLine()) != null) {
             if (lineLogin.length() > 1) {
@@ -72,9 +64,7 @@ public class TensorQuery {
                     String basedURL = str[0];
                     driver.get(basedURL);
 
-                    //tenzor
-
-                    //баянова
+                  //баянова
 //                driver.get(basedURL + "/petition.html?id=e544f187-e6c9-491b-ae9c-599083f9fa03");
 //                driver.findElement(By.xpath("//div[@id='ws-1flvutwf8hl1504609716252']/div")).click();
 //                driver.findElement(By.cssSelector("input.controls-TextBox__field.js-controls-TextBox__field")).clear();
@@ -252,9 +242,6 @@ public class TensorQuery {
 //                    driver.findElement(By.id("mailbox__password")).clear();
 //                    driver.findElement(By.id("mailbox__password")).sendKeys(str[2]);
 //                    driver.findElement(By.id("mailbox__auth__button")).click();
-
-                    //https://uploadfiles.io/
-//                driver.findElement(By.cssSelector("input.dz-hidden-input")).sendKeys(str[1]);
 
                     //Screenshot pages
                     String screenpath = captureScreenshot(driver, str[1]);
